@@ -36,7 +36,7 @@ Users can also adjust the time limit for each number to make the practice more c
 1. **Clone the repository**:
 
     ```bash
-    git clone https://github.com/yourusername/number-typing-practice.git
+    git clone https://github.com/yourusername/number-typing-practice-tool.git
     ```
 
 2. **Navigate to the project directory**:
