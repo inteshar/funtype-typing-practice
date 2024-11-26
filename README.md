@@ -24,11 +24,11 @@ git clone https://github.com/yourusername/number-typing-practice.git
 
 Navigate to the project directory:
 
-``cd number-typing-practice
+``cd number-typing-practice``
 
 Install the required dependencies:
 
-``npm install
+``npm install``
 
 Running the App
 
