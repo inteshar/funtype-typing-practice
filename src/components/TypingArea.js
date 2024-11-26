@@ -263,14 +263,19 @@ const NumberTypingMode = () => {
         className="absolute bottom-0 left-0 right-0 p-4 text-center 
                       bg-black/30 backdrop-blur-sm text-white/70 text-sm md:text-base"
       >
-        {isPlaying ? (
-          <>
-            Type the numbers before they change! | {timeLimit / 1000} second per
-            number
-          </>
-        ) : (
-          <>Click Start Game to begin or adjust settings using the ⚙️ button</>
-        )}
+        <p>
+          {isPlaying ? (
+            <>
+              Type the numbers before they change! | {timeLimit / 1000} second
+              per number
+            </>
+          ) : (
+            <>
+              Click Start Game to begin or adjust settings using the ⚙️ button
+            </>
+          )}
+        </p>
+        <p>Developed and Designed by Mohammad Inteshar Alam | 2023</p>
       </div>
     </div>
   );
