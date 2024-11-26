@@ -129,53 +129,53 @@ const NumberTypingMode = () => {
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 flex flex-col items-center justify-center text-white">
       {/* Top Stats Bar */}
-      <div className="fixed top-0 left-0 right-0 p-4 flex justify-between items-center bg-black/30 backdrop-blur-sm z-50">
-        <div className="flex gap-2 md:gap-4">
+      <div className="fixed top-0 left-0 right-0 p-2 flex justify-between items-center bg-black/30 backdrop-blur-sm z-50">
+        <div className="flex gap-1">
           <div className="flex flex-col items-center">
-            <span className="text-[10px] md:text-xs opacity-80 font-retro">
+            <span className="text-[6px] md:text-[8px] opacity-80 font-retro">
               CORRECT
             </span>
-            <span className="text-green-400 font-bold text-base md:text-lg font-retro">
+            <span className="text-green-400 font-bold text-sm font-retro">
               {score.correct}
             </span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-[10px] md:text-xs opacity-80 font-retro">
+            <span className="text-[6px] md:text-[8px] opacity-80 font-retro">
               WRONG
             </span>
-            <span className="text-red-400 font-bold text-base md:text-lg font-retro">
+            <span className="text-red-400 font-bold text-sm font-retro">
               {score.wrong}
             </span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-[10px] md:text-xs opacity-80 font-retro">
+            <span className="text-[6px] md:text-[8px] opacity-80 font-retro">
               ACCURACY
             </span>
-            <span className="text-blue-400 font-bold text-base md:text-lg font-retro">
+            <span className="text-blue-400 font-bold text-sm font-retro">
               {accuracy}%
             </span>
           </div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           <div className="flex flex-col items-center">
-            <span className="text-[10px] md:text-xs opacity-80 font-retro">
+            <span className="text-[6px] md:text-[8px] opacity-80 font-retro">
               STREAK
             </span>
-            <span className="text-yellow-400 font-bold text-base md:text-lg font-retro">
+            <span className="text-yellow-400 font-bold text-sm font-retro">
               🔥 {streak}
             </span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-[10px] md:text-xs opacity-80 font-retro">
+            <span className="text-[6px] md:text-[8px] opacity-80 font-retro">
               HIGHEST STREAK
             </span>
-            <span className="text-yellow-500 font-bold text-base md:text-lg font-retro">
+            <span className="text-yellow-500 font-bold text-sm font-retro">
               {highestStreak}
             </span>
           </div>
           <button
             onClick={() => setShowSettings(!showSettings)}
-            className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
+            className="p-1 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
           >
             ⚙️
           </button>
@@ -243,7 +243,7 @@ const NumberTypingMode = () => {
           ) : (
             <>
               <div className="relative">
-                <div className="font-retro text-4xl md:text-5xl font-bold font-mono tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse whitespace-nowrap">
+                <div className="font-retro text-2xl md:text-3xl font-bold font-mono tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse whitespace-nowrap">
                   {displayNumber}
                 </div>
                 <div className="absolute -inset-4 bg-white/5 rounded-lg blur-lg -z-10"></div>
@@ -254,7 +254,7 @@ const NumberTypingMode = () => {
                 type="text"
                 value={userInput}
                 onChange={handleInput}
-                className="w-full max-w-[12rem] text-center text-lg md:text-xl font-mono py-2 px-3 
+                className="w-full max-w-[8rem] text-center text-[10px] md:text-[12px] font-mono py-2 px-3 
              bg-white/10 border-2 border-white/20 rounded-xl
              focus:outline-none focus:border-purple-400
              transition-all duration-300 backdrop-blur-sm"
@@ -263,7 +263,7 @@ const NumberTypingMode = () => {
               />
 
               <div
-                className={`text-lg md:text-xl font-bold transition-all duration-300 
+                className={`text-[12px] md:text-sm font-bold transition-all duration-300 
                 ${
                   lastResult === "CORRECT!" ? "text-green-400" : "text-red-400"
                 }`}
@@ -284,8 +284,8 @@ const NumberTypingMode = () => {
 
       {/* Bottom Instructions */}
       <div
-        className="absolute bottom-0 left-0 right-0 p-3 text-center 
-              bg-black/30 backdrop-blur-sm text-white/70 text-[10px] md:text-xs font-retro"
+        className="absolute bottom-0 left-0 right-0 p-2 text-center 
+              bg-black/30 backdrop-blur-sm text-white/70 text-[6px] md:text-[8px] font-retro"
       >
         <p className="border p-2 rounded-lg border-white/10 bg-white/5 font-bold">
           {isPlaying ? (
@@ -299,7 +299,7 @@ const NumberTypingMode = () => {
             </>
           )}
         </p>
-        <p className="text-[9px] mt-2">
+        <p className="text-[6px] mt-1">
           Developed and Designed by Mohammad Inteshar Alam with ❤️ © 2024
         </p>
       </div>
