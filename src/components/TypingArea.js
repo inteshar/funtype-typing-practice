@@ -130,46 +130,46 @@ const NumberTypingMode = () => {
     <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 flex flex-col items-center justify-center text-white">
       {/* Top Stats Bar */}
       <div className="fixed top-0 left-0 right-0 p-4 flex justify-between items-center bg-black/30 backdrop-blur-sm z-50">
-        <div className="flex gap-4 md:gap-6">
+        <div className="flex gap-2 md:gap-4">
           <div className="flex flex-col items-center">
-            <span className="text-xs md:text-sm opacity-80 font-retro">
+            <span className="text-[10px] md:text-xs opacity-80 font-retro">
               CORRECT
             </span>
-            <span className="text-green-400 font-bold text-lg md:text-xl font-retro">
+            <span className="text-green-400 font-bold text-base md:text-lg font-retro">
               {score.correct}
             </span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-xs md:text-sm opacity-80 font-retro">
+            <span className="text-[10px] md:text-xs opacity-80 font-retro">
               WRONG
             </span>
-            <span className="text-red-400 font-bold text-lg md:text-xl font-retro">
+            <span className="text-red-400 font-bold text-base md:text-lg font-retro">
               {score.wrong}
             </span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-xs md:text-sm opacity-80 font-retro">
+            <span className="text-[10px] md:text-xs opacity-80 font-retro">
               ACCURACY
             </span>
-            <span className="text-blue-400 font-bold text-lg md:text-xl font-retro">
+            <span className="text-blue-400 font-bold text-base md:text-lg font-retro">
               {accuracy}%
             </span>
           </div>
         </div>
         <div className="flex items-center gap-4">
           <div className="flex flex-col items-center">
-            <span className="text-xs md:text-sm opacity-80 font-retro">
+            <span className="text-[10px] md:text-xs opacity-80 font-retro">
               STREAK
             </span>
-            <span className="text-yellow-400 font-bold text-lg md:text-xl font-retro">
+            <span className="text-yellow-400 font-bold text-base md:text-lg font-retro">
               🔥 {streak}
             </span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-xs md:text-sm opacity-80 font-retro">
+            <span className="text-[10px] md:text-xs opacity-80 font-retro">
               HIGHEST STREAK
             </span>
-            <span className="text-yellow-500 font-bold text-lg md:text-xl font-retro">
+            <span className="text-yellow-500 font-bold text-base md:text-lg font-retro">
               {highestStreak}
             </span>
           </div>
@@ -243,7 +243,7 @@ const NumberTypingMode = () => {
           ) : (
             <>
               <div className="relative">
-                <div className="font-retro text-6xl md:text-8xl font-bold font-mono tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse whitespace-nowrap">
+                <div className="font-retro text-4xl md:text-5xl font-bold font-mono tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse whitespace-nowrap">
                   {displayNumber}
                 </div>
                 <div className="absolute -inset-4 bg-white/5 rounded-lg blur-lg -z-10"></div>
@@ -254,24 +254,23 @@ const NumberTypingMode = () => {
                 type="text"
                 value={userInput}
                 onChange={handleInput}
-                className="w-full max-w-[16rem] text-center text-2xl md:text-3xl font-mono py-3 px-4 
-                           bg-white/10 border-2 border-white/20 rounded-xl
-                           focus:outline-none focus:border-purple-400
-                           transition-all duration-300 backdrop-blur-sm"
+                className="w-full max-w-[12rem] text-center text-lg md:text-xl font-mono py-2 px-3 
+             bg-white/10 border-2 border-white/20 rounded-xl
+             focus:outline-none focus:border-purple-400
+             transition-all duration-300 backdrop-blur-sm"
                 placeholder="Type here"
                 autoFocus
               />
 
               <div
-                className={`text-xl md:text-2xl font-bold transition-all duration-300 
-                              ${
-                                lastResult === "CORRECT!"
-                                  ? "text-green-400"
-                                  : "text-red-400"
-                              }`}
+                className={`text-lg md:text-xl font-bold transition-all duration-300 
+                ${
+                  lastResult === "CORRECT!" ? "text-green-400" : "text-red-400"
+                }`}
               >
                 {lastResult}
               </div>
+
               <button
                 onClick={pauseGame}
                 className="px-8 py-4 text-2xl rounded-xl bg-red-500 hover:bg-red-600 transition-colors"
@@ -285,10 +284,10 @@ const NumberTypingMode = () => {
 
       {/* Bottom Instructions */}
       <div
-        className="absolute bottom-0 left-0 right-0 p-4 text-center 
-                      bg-black/30 backdrop-blur-sm text-white/70 md:text-base font-retro"
+        className="absolute bottom-0 left-0 right-0 p-3 text-center 
+              bg-black/30 backdrop-blur-sm text-white/70 text-[10px] md:text-xs font-retro"
       >
-        <p className="border p-2 rounded-lg border-white/10 bg-white/5 text-sm font-bold">
+        <p className="border p-2 rounded-lg border-white/10 bg-white/5 font-bold">
           {isPlaying ? (
             <>
               Type the numbers before they change! | {timeLimit / 1000} second
@@ -300,7 +299,7 @@ const NumberTypingMode = () => {
             </>
           )}
         </p>
-        <p className="text-xs p-2">
+        <p className="text-[9px] mt-2">
           Developed and Designed by Mohammad Inteshar Alam with ❤️ © 2024
         </p>
       </div>
