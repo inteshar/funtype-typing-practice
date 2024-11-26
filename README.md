@@ -57,6 +57,7 @@ To run the app locally, use the following command:
 
 ```bash
 npm start
+```
 
 ## Running the App
 
