@@ -263,7 +263,7 @@ const NumberTypingMode = () => {
         className="absolute bottom-0 left-0 right-0 p-4 text-center 
                       bg-black/30 backdrop-blur-sm text-white/70 md:text-base"
       >
-        <p className="border p-2 rounded-lg border-white/10 bg-white/5 text-sm">
+        <p className="border p-2 rounded-lg border-white/10 bg-white/5 text-sm font-bold">
           {isPlaying ? (
             <>
               Type the numbers before they change! | {timeLimit / 1000} second
