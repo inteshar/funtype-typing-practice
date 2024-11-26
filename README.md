@@ -35,21 +35,21 @@ Users can also adjust the time limit for each number to make the practice more c
 
 1. **Clone the repository**:
 
-    ```bash
-    git clone https://github.com/yourusername/number-typing-practice-tool.git
-    ```
+   ```bash
+   git clone https://github.com/inteshar/number-typing-practice-tool.git
+   ```
 
 2. **Navigate to the project directory**:
 
-    ```bash
-    cd number-typing-practice
-    ```
+   ```bash
+   cd number-typing-practice
+   ```
 
 3. **Install the required dependencies**:
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 ### Running the App
 
@@ -70,6 +70,7 @@ This will start the app and open it in your default web browser at [http://local
 ### Key Components
 
 - **State Management**:
+
   - `score`: Tracks the number of correct and wrong attempts.
   - `streak`: Keeps count of consecutive correct entries.
   - `timeLimit`: Defines the time window to type the number.
@@ -77,6 +78,7 @@ This will start the app and open it in your default web browser at [http://local
   - `showSettings`: Controls the visibility of the settings menu.
 
 - **Game Flow**:
+
   - The game generates random 4-digit numbers.
   - Users must type the number before it changes.
   - The app calculates the accuracy based on correct/incorrect inputs.
