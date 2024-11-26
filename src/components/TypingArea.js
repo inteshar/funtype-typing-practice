@@ -6,6 +6,11 @@ const NumberTypingMode = () => {
   const [score, setScore] = useState({ correct: 0, wrong: 0 });
   const [lastResult, setLastResult] = useState("");
   const [streak, setStreak] = useState(0);
+  const [highestStreak, setHighestStreak] = useState(() => {
+    // Load highest streak from localStorage, default to 0 if not set
+    const savedStreak = localStorage.getItem("highestStreak");
+    return savedStreak ? parseInt(savedStreak) : 0;
+  });
   const [timeLimit, setTimeLimit] = useState(1000);
   const [isPlaying, setIsPlaying] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
@@ -21,7 +26,15 @@ const NumberTypingMode = () => {
     if (input === currentNumber) {
       setScore((prev) => ({ ...prev, correct: prev.correct + 1 }));
       setLastResult("CORRECT!");
-      setStreak((prev) => prev + 1);
+      setStreak((prev) => {
+        const newStreak = prev + 1;
+        // Update the highest streak if the current streak is greater
+        if (newStreak > highestStreak) {
+          setHighestStreak(newStreak);
+          localStorage.setItem("highestStreak", newStreak); // Persist highest streak in localStorage
+        }
+        return newStreak;
+      });
       return true;
     } else {
       setScore((prev) => ({ ...prev, wrong: prev.wrong + 1 }));
@@ -119,29 +132,45 @@ const NumberTypingMode = () => {
       <div className="fixed top-0 left-0 right-0 p-4 flex justify-between items-center bg-black/30 backdrop-blur-sm z-50">
         <div className="flex gap-4 md:gap-6">
           <div className="flex flex-col items-center">
-            <span className="text-xs md:text-sm opacity-80">CORRECT</span>
-            <span className="text-green-400 font-bold text-lg md:text-xl">
+            <span className="text-xs md:text-sm opacity-80 font-retro">
+              CORRECT
+            </span>
+            <span className="text-green-400 font-bold text-lg md:text-xl font-retro">
               {score.correct}
             </span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-xs md:text-sm opacity-80">WRONG</span>
-            <span className="text-red-400 font-bold text-lg md:text-xl">
+            <span className="text-xs md:text-sm opacity-80 font-retro">
+              WRONG
+            </span>
+            <span className="text-red-400 font-bold text-lg md:text-xl font-retro">
               {score.wrong}
             </span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-xs md:text-sm opacity-80">ACCURACY</span>
-            <span className="text-blue-400 font-bold text-lg md:text-xl">
+            <span className="text-xs md:text-sm opacity-80 font-retro">
+              ACCURACY
+            </span>
+            <span className="text-blue-400 font-bold text-lg md:text-xl font-retro">
               {accuracy}%
             </span>
           </div>
         </div>
         <div className="flex items-center gap-4">
           <div className="flex flex-col items-center">
-            <span className="text-xs md:text-sm opacity-80">STREAK</span>
-            <span className="text-yellow-400 font-bold text-lg md:text-xl">
+            <span className="text-xs md:text-sm opacity-80 font-retro">
+              STREAK
+            </span>
+            <span className="text-yellow-400 font-bold text-lg md:text-xl font-retro">
               🔥 {streak}
+            </span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="text-xs md:text-sm opacity-80 font-retro">
+              HIGHEST STREAK
+            </span>
+            <span className="text-yellow-500 font-bold text-lg md:text-xl font-retro">
+              {highestStreak}
             </span>
           </div>
           <button
@@ -155,7 +184,7 @@ const NumberTypingMode = () => {
 
       {/* Settings Modal */}
       {showSettings && (
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center font-retro">
           <div className="bg-gray-800 p-6 rounded-xl max-w-md w-full mx-4">
             <h2 className="text-2xl font-bold mb-4">Settings</h2>
             <div className="space-y-4">
@@ -203,7 +232,7 @@ const NumberTypingMode = () => {
 
       {/* Main Game Area */}
       {!showSettings && (
-        <div className="flex flex-col items-center gap-8 px-4 max-w-full">
+        <div className="flex flex-col items-center gap-8 px-4 max-w-full font-retro">
           {!isPlaying ? (
             <button
               onClick={startGame}
@@ -214,11 +243,7 @@ const NumberTypingMode = () => {
           ) : (
             <>
               <div className="relative">
-                <div
-                  className="text-6xl md:text-8xl font-bold font-mono tracking-wider 
-                               bg-clip-text text-transparent bg-gradient-to-r 
-                               from-blue-400 to-purple-400 animate-pulse whitespace-nowrap"
-                >
+                <div className="font-retro text-6xl md:text-8xl font-bold font-mono tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse whitespace-nowrap">
                   {displayNumber}
                 </div>
                 <div className="absolute -inset-4 bg-white/5 rounded-lg blur-lg -z-10"></div>
@@ -261,7 +286,7 @@ const NumberTypingMode = () => {
       {/* Bottom Instructions */}
       <div
         className="absolute bottom-0 left-0 right-0 p-4 text-center 
-                      bg-black/30 backdrop-blur-sm text-white/70 md:text-base"
+                      bg-black/30 backdrop-blur-sm text-white/70 md:text-base font-retro"
       >
         <p className="border p-2 rounded-lg border-white/10 bg-white/5 text-sm font-bold">
           {isPlaying ? (
