@@ -197,7 +197,7 @@ const NumberTypingMode = () => {
                     <button
                       key={time}
                       onClick={() => setTimeLimit(time * 1000)} // Update time limit without closing the modal
-                      className={`px-4 py-2 rounded ${
+                      className={`px-1 py-1 rounded ${
                         timeLimit === time * 1000
                           ? "bg-purple-500 text-white"
                           : "bg-white/10 hover:bg-white/20"
@@ -254,11 +254,11 @@ const NumberTypingMode = () => {
                 type="text"
                 value={userInput}
                 onChange={handleInput}
-                className="w-full max-w-[8rem] text-center text-[10px] md:text-[12px] font-mono py-2 px-3 
+                className="font-retro w-full max-w-[8rem] text-center text-[10px] md:text-[12px] font-mono py-2 
              bg-white/10 border-2 border-white/20 rounded-xl
              focus:outline-none focus:border-purple-400
              transition-all duration-300 backdrop-blur-sm"
-                placeholder="Type here"
+                placeholder="Type Here"
                 autoFocus
               />
 
