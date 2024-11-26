@@ -102,14 +102,6 @@ const NumberTypingMode = () => {
     }
   };
 
-  const handleTimeChange = (newTime) => {
-    setTimeLimit(newTime);
-    if (isPlaying) {
-      pauseGame();
-      startGame();
-    }
-  };
-
   useEffect(() => {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
@@ -121,11 +113,10 @@ const NumberTypingMode = () => {
       ? ((score.correct / (score.correct + score.wrong)) * 100).toFixed(1)
       : 0;
 
-  // Rest of the JSX remains the same
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 flex flex-col items-center justify-center text-white">
       {/* Top Stats Bar */}
-      <div className="absolute top-0 left-0 right-0 p-4 flex justify-between items-center bg-black/30 backdrop-blur-sm">
+      <div className="fixed top-0 left-0 right-0 p-4 flex justify-between items-center bg-black/30 backdrop-blur-sm z-50">
         <div className="flex gap-4 md:gap-6">
           <div className="flex flex-col items-center">
             <span className="text-xs md:text-sm opacity-80">CORRECT</span>
@@ -176,7 +167,7 @@ const NumberTypingMode = () => {
                   {[0.5, 1, 1.5, 2, 3].map((time) => (
                     <button
                       key={time}
-                      onClick={() => handleTimeChange(time * 1000)}
+                      onClick={() => setTimeLimit(time * 1000)} // Update time limit without closing the modal
                       className={`px-4 py-2 rounded ${
                         timeLimit === time * 1000
                           ? "bg-purple-500 text-white"
@@ -190,13 +181,16 @@ const NumberTypingMode = () => {
               </div>
               <div className="flex gap-2 mt-6">
                 <button
-                  onClick={startGame}
+                  onClick={() => {
+                    startGame(); // Start game only when the user clicks "Start Game"
+                    setShowSettings(false); // Close settings modal after starting the game
+                  }}
                   className="flex-1 py-2 rounded bg-green-500 hover:bg-green-600 transition-colors"
                 >
                   Start Game
                 </button>
                 <button
-                  onClick={() => setShowSettings(false)}
+                  onClick={() => setShowSettings(false)} // Close settings modal without starting the game
                   className="flex-1 py-2 rounded bg-gray-600 hover:bg-gray-700 transition-colors"
                 >
                   Cancel
@@ -253,6 +247,12 @@ const NumberTypingMode = () => {
               >
                 {lastResult}
               </div>
+              <button
+                onClick={pauseGame}
+                className="px-8 py-4 text-2xl rounded-xl bg-red-500 hover:bg-red-600 transition-colors"
+              >
+                Stop Game
+              </button>
             </>
           )}
         </div>
@@ -261,9 +261,9 @@ const NumberTypingMode = () => {
       {/* Bottom Instructions */}
       <div
         className="absolute bottom-0 left-0 right-0 p-4 text-center 
-                      bg-black/30 backdrop-blur-sm text-white/70 text-sm md:text-base"
+                      bg-black/30 backdrop-blur-sm text-white/70 md:text-base"
       >
-        <p>
+        <p className="border p-2 rounded-lg border-white/10 bg-white/5 text-sm">
           {isPlaying ? (
             <>
               Type the numbers before they change! | {timeLimit / 1000} second
@@ -275,7 +275,7 @@ const NumberTypingMode = () => {
             </>
           )}
         </p>
-        <p className="text-sm md:text-base">
+        <p className="text-xs p-2">
           Developed and Designed by Mohammad Inteshar Alam with ❤️ © 2024
         </p>
       </div>
