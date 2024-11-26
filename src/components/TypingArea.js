@@ -275,7 +275,9 @@ const NumberTypingMode = () => {
             </>
           )}
         </p>
-        <p>Developed and Designed by Mohammad Inteshar Alam | 2023</p>
+        <p className="text-sm md:text-base">
+          Developed and Designed by Mohammad Inteshar Alam with ❤️ © 2024
+        </p>
       </div>
     </div>
   );
