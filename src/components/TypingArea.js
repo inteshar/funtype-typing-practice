@@ -275,7 +275,9 @@ const NumberTypingMode = () => {
                 }`}
               >
                 <img
-                  className="inline-block mr-2 h-50 w-50"
+                  className={`inline-block mr-2 ${
+                    lastResult === "CORRECT!" ? "h-50 w-50 m-0" : "h-24 w-24"
+                  }`}
                   src={lastResult === "CORRECT!" ? CorrectGif : WrongGif}
                   alt={lastResult}
                 />
