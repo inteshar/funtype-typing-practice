@@ -132,19 +132,25 @@ const NumberTypingMode = () => {
       <div className="fixed top-0 left-0 right-0 p-4 flex justify-between items-center bg-black/30 backdrop-blur-sm z-50">
         <div className="flex gap-4 md:gap-6">
           <div className="flex flex-col items-center">
-            <span className="text-xs md:text-sm opacity-80">CORRECT</span>
+            <span className="text-[8px] font-bold md:text-sm opacity-80">
+              CORRECT
+            </span>
             <span className="text-green-400 font-bold text-lg md:text-xl">
               {score.correct}
             </span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-xs md:text-sm opacity-80">WRONG</span>
+            <span className="text-[8px] font-bold md:text-sm opacity-80">
+              WRONG
+            </span>
             <span className="text-red-400 font-bold text-lg md:text-xl">
               {score.wrong}
             </span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-xs md:text-sm opacity-80">ACCURACY</span>
+            <span className="text-[8px] font-bold md:text-sm opacity-80">
+              ACCURACY
+            </span>
             <span className="text-blue-400 font-bold text-lg md:text-xl">
               {accuracy}%
             </span>
@@ -152,13 +158,15 @@ const NumberTypingMode = () => {
         </div>
         <div className="flex items-center gap-4">
           <div className="flex flex-col items-center">
-            <span className="text-xs md:text-sm opacity-80">STREAK</span>
+            <span className="text-[8px] font-bold md:text-sm opacity-80">
+              STREAK
+            </span>
             <span className="text-yellow-400 font-bold text-lg md:text-xl">
               🔥 {streak}
             </span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-xs md:text-sm opacity-80">
+            <span className="text-[8px] font-bold md:text-sm opacity-80">
               HIGHEST STREAK
             </span>
             <span className="text-yellow-500 font-bold text-lg md:text-xl">
