@@ -255,13 +255,14 @@ const NumberTypingMode = () => {
 
               <input
                 ref={inputRef}
-                type="text"
+                type="number"
                 value={userInput}
                 onChange={handleInput}
                 className="w-full max-w-[16rem] text-center text-2xl md:text-3xl font-mono py-3 px-4 
-                           bg-white/10 border-2 border-white/20 rounded-xl
-                           focus:outline-none focus:border-purple-400
-                           transition-all duration-300 backdrop-blur-sm"
+             bg-white/10 border-2 border-white/20 rounded-xl
+             focus:outline-none focus:border-purple-400
+             transition-all duration-300 backdrop-blur-sm 
+             no-spinner"
                 placeholder="Type here"
                 autoFocus
               />
