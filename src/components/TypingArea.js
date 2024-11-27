@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import CorrectGif from "../assets/correct.gif";
+import WrongGif from "../assets/wrong.gif";
 
 const NumberTypingMode = () => {
   const [displayNumber, setDisplayNumber] = useState("");
@@ -268,11 +270,15 @@ const NumberTypingMode = () => {
               />
 
               <div
-                className={`text-xl md:text-2xl font-bold transition-all duration-300 ${
+                className={`flex flex-col items-center text-xl md:text-2xl font-bold transition-all duration-300 ${
                   lastResult === "CORRECT!" ? "text-green-400" : "text-red-400"
                 }`}
               >
-                {lastResult}
+                <img
+                  className="inline-block mr-2 h-50 w-50"
+                  src={lastResult === "CORRECT!" ? CorrectGif : WrongGif}
+                  alt={lastResult}
+                />
               </div>
 
               <button
