@@ -34,7 +34,7 @@ const Home = () => {
         <div className="flex flex-col md:flex-row gap-6 mt-8">
           <Link
             to="/word-typing"
-            className="group relative px-8 py-4 text-2xl rounded-xl
+            className="text-center group relative px-8 py-4 text-2xl rounded-xl
                      bg-white/10 border-2 border-white/20
                      hover:bg-white/20 hover:border-purple-400
                      transition-all duration-300 backdrop-blur-sm
@@ -47,12 +47,12 @@ const Home = () => {
             >
               MODE
             </span>
-            Word Typing
+            Word
           </Link>
 
           <Link
             to="/number-typing"
-            className="group relative px-8 py-4 text-2xl rounded-xl
+            className="text-center group relative px-8 py-4 text-2xl rounded-xl
                      bg-white/10 border-2 border-white/20
                      hover:bg-white/20 hover:border-blue-400
                      transition-all duration-300 backdrop-blur-sm
@@ -65,7 +65,7 @@ const Home = () => {
             >
               MODE
             </span>
-            Number Typing
+            Number
           </Link>
         </div>
       </div>
