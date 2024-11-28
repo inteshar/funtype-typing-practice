@@ -1,12 +1,18 @@
-import React from "react";
-import TypingArea from "./components/TypingArea";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import WordTypingMode from "./components/WordTypingMode";
+import NumberTypingMode from "./components/NumberTypingMode";
 
-const App = () => {
+function App() {
   return (
-    <div className="container mx-auto p-6">
-      <TypingArea />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/word-typing" element={<WordTypingMode />} />
+        <Route path="/number-typing" element={<NumberTypingMode />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
