@@ -1,27 +1,28 @@
-# Number Typing Practice Tool
+# FunType - Typing Practice Tool
 
 ## Description
 
-This is a **typing practice web app** built using **React.js** and styled with **Tailwind CSS**. The tool helps users improve their typing speed and accuracy by typing randomly generated numbers within a set time limit. Players must type the displayed number before it changes, and the app tracks:
+**FunType** is a **typing practice web app** built using **React.js** and styled with **Tailwind CSS**. This tool helps users enhance their typing speed and accuracy by practicing typing randomly generated **numbers** and **words** within a set time limit. Users must type the displayed item before it changes, and the app tracks:
 
 - **Score** (Correct / Wrong Entries)
 - **Streak** (Consecutive Correct Inputs)
 - **Accuracy**
 - **Mistakes**
 
-Users can also adjust the time limit for each number to make the practice more challenging.
+Users can also adjust the time limit for each number or word to increase the challenge and improve their typing skills.
 
 ---
 
 ## Features
 
-- **Track Correct and Wrong Entries**
-- **Calculate Accuracy** based on correct/incorrect inputs
-- **Display Streak** of consecutive correct entries
-- **Adjustable Time Limit** for each number
-- **Clear Feedback** (Correct/Incorrect) after each input
-- **Responsive UI** that works well on all screen sizes
-- **Easy-to-Use Interface** for effortless practice
+- **Track Correct and Incorrect Entries** for both number and word modes
+- **Calculate Accuracy** based on the number of correct and incorrect inputs
+- **Display Streak** of consecutive correct entries to encourage performance
+- **Adjustable Time Limit** for number and word typing modes (options include 0.5s, 1s, 1.5s, 2s, or 3s)
+- **Clear Feedback** (Correct/Incorrect) displayed after each entry
+- **Responsive UI** that works well on all screen sizes (mobile, tablet, desktop)
+- **Easy-to-Use Interface** designed for effortless typing practice
+- **Two Modes**: Number Typing and Word Typing to practice different typing challenges
 
 ---
 
@@ -36,13 +37,13 @@ Users can also adjust the time limit for each number to make the practice more c
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/inteshar/number-typing-practice-tool.git
+   git clone https://github.com/inteshar/funtype-typing-practice.git
    ```
 
 2. **Navigate to the project directory**:
 
    ```bash
-   cd number-typing-practice
+   cd funtype-typing-practice
    ```
 
 3. **Install the required dependencies**:
@@ -71,18 +72,25 @@ This will start the app and open it in your default web browser at [http://local
 
 - **State Management**:
 
-  - `score`: Tracks the number of correct and wrong attempts.
+  - `score`: Tracks the number of correct and incorrect attempts.
   - `streak`: Keeps count of consecutive correct entries.
-  - `timeLimit`: Defines the time window to type the number.
+  - `timeLimit`: Defines the time window to type each number or word.
   - `isPlaying`: Toggles the game state (active/inactive).
   - `showSettings`: Controls the visibility of the settings menu.
+  - `mode`: Switches between **Word Typing** and **Number Typing** modes.
 
 - **Game Flow**:
 
-  - The game generates random 4-digit numbers.
-  - Users must type the number before it changes.
-  - The app calculates the accuracy based on correct/incorrect inputs.
-  - Feedback ("Correct!" or "Incorrect!") is shown after each input.
+  - The game generates either random **numbers** or **words** for users to type.
+  - Users must type the displayed number or word before it changes.
+  - The app calculates **accuracy** based on the correct and incorrect entries.
+  - Feedback ("**Correct!**" or "**Incorrect!**") is shown after each input.
+  - Users can switch between modes at any time.
 
 - **Settings**:
-  - Players can adjust the time limit for the number display (options: 0.5s, 1s, 1.5s, 2s, or 3s).
+  - Players can adjust the **time limit** for the number or word display (options: 0.5s, 1s, 1.5s, 2s, or 3s).
+  - The app also provides settings to switch between **Number Typing** and **Word Typing** modes.
+
+## Contributing
+
+We welcome contributions to make FunType even better! If you'd like to contribute, feel free to fork the repo and submit a pull request.
