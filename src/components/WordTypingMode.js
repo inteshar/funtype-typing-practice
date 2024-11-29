@@ -304,7 +304,7 @@ const WordTypingMode = () => {
             <>
               <div className="relative">
                 <div
-                  className="text-6xl md:text-8xl font-bold font-mono tracking-wider 
+                  className="text-4xl md:text-8xl font-bold font-mono tracking-wider 
                    bg-clip-text text-transparent bg-gradient-to-r 
                    from-blue-400 to-purple-400 animate-pulse whitespace-nowrap"
                 >
