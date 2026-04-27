@@ -79,7 +79,7 @@ const Home = () => {
           Choose a typing mode to begin practicing
         </p>
         <p className="text-xs p-2">
-          Developed and Designed by Mohammad Inteshar Alam with ❤️ © 2024
+          Developed and Designed by Mohammad Inteshar Alam with ❤️ © <a className="text-decoration-none" href="https://inteshar.github.io">Contact</a>
         </p>
       </div>
     </div>
