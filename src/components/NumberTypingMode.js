@@ -326,9 +326,7 @@ const NumberTypingMode = () => {
             </>
           )}
         </p>
-        <p className="text-xs p-2">
-          Developed and Designed by Mohammad Inteshar Alam with ❤️ © 2024
-        </p>
+        <p class="text-xs p-2">Developed and Designed by MrXiwlev (Mohammad Inteshar Alam) with ❤️ © <a class="text-decoration-none font-bold" href="https://inteshar.github.io">Contact</a></p>
       </div>
     </div>
   );
